@@ -6,11 +6,11 @@ use std::fs::File;
 command!(latency(ctx, msg) {
     let latency = ctx.shard.lock()
         .latency()
-        .map_or_else(|| "N/A".to_owned(), |s| {
+        .map_or_else(|| "N/A".to_string(), |s| {
             format!("{}.{}s", s.as_secs(), s.subsec_nanos())
         });
 
-    let _ = msg.channel_id.say(&latency);
+    let _ = msg.channel_id.say(latency);
 });
 
 command!(ping(_ctx, msg) {

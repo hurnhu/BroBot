@@ -45,7 +45,7 @@ fn main() {
     // `RUST_LOG` to debug`.
     env_logger::init().expect("Failed to initialize env_logger");
 
-let mut client = Client::new(&env::var("DISCORD_TOKEN").unwrap(), Handler);
+let mut client = Client::new(&env::var("CSST_TOKEN").unwrap(), Handler);
     let owners = match http::get_current_application_info() {
         Ok(info) => {
             let mut set = HashSet::new();
