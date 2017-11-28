@@ -1,4 +1,3 @@
-
 command!(quit(ctx, msg, _args) {
     match ctx.quit() {
         Ok(()) => {

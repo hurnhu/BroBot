@@ -19,7 +19,8 @@ command!(ping(_ctx, msg) {
 
 command!(time(_context, message) {
     let utc: DateTime<Utc> = Utc::now();
-    if let Err(why) = message.channel_id.say(&format!("Ding dong, ding dong! The current time is: {} (UTC)", &utc.format("%H:%M").to_string())){
+    if let Err(why) = message.channel_id.say(&format!("Ding dong, ding dong! \
+ The current time is: {} (UTC)", &utc.format("%H:%M").to_string())){
         println!("error: {:?}", why);
     }
 });
@@ -43,16 +44,16 @@ command!(usage(_context, message) {
 });
 
 command!(source(_context, message) {
-  let message_to_send = String::from("You need the sauce? I got the sauce right here -> https://github.com/hurnhu/BroBot");
+  let message_to_send = String::from("You need the sauce? \
+ I got the sauce right here -> https://github.com/hurnhu/BroBot");
   if let Err(why) = message.channel_id.say(&message_to_send) {
     println!("error: {:?}", why);
   }
 });
 
 command!(author(_context, message) {
-  let message_to_send = String::from("here is my author: https://github.com/hurnhu , give him the lovin");
+  let message_to_send = String::from("here is my author: https://github.com/hurnhu");
   if let Err(why) = message.channel_id.say(&message_to_send) {
     println!("error: {:?}", why);
   }
 });
-
